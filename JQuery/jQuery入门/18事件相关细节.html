@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{padding: 50px;}
+    #div1{background-color: red;}
+    #div2{background-color: yellow;}
+    #div3{background-color: blue;}
+  </style>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    /**
+     * stopPropagation 阻止事件冒泡   preventDefault  阻止默认行为
+     * which  
+            鼠标事件:button
+            1：左键
+            2：滚轮
+            3：右键
+            keydown:keyCode 键码
+            keypress:charCode 字符码
+     */ 
+    $(function() {
+      $('div').click(function(ev){
+        console.log(this.id)
+        alert(this.id);
+        // alert($(this).attr('id'));
+
+        ev.stopPropagation();
+      })
+      $('a').click(function(ev){
+        // ev.preventDefault();
+        // ev.stopPropagation();
+
+        //同时阻止冒泡和默认行为
+        return false;
+      })
+      $(document).mousedown(function(ev){
+        //alert(ev.pageX + ',' + ev.pageY);//带滚动距离
+        //alert(ev.clientX + ',' + ev.clientY);//可视窗口左上角为原点
+
+        alert(ev.which);
+      })
+      $(window).keydown(function(ev){
+        alert(ev.which);
+
+      })
+
+    })
+  </script>
+</head>
+<body style="height: 3000px;">
+  
+    <!-- <div id="div1">
+      <div id="div2">
+        <div id="div3">
+          <a href="http://www.taobao.com">淘宝 </a>
+        </div>
+      </div>
+    </div> -->
+
+  
+</body>
+</html>

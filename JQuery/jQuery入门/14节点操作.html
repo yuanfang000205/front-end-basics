@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+        /*
+          * insertBefore  before
+          * insertAfter   after
+          * appendTo      append
+          * prependTo     prepend
+          * remove
+
+        */
+       $(function(){
+        //  $('span').insertBefore($('div'));
+        //  $('span').insertAfter($('div'));
+         //找到span节点，插入到div的子节点的末尾
+        //  $('span').appendTo($('div'));
+         //找到span节点，插入到div的子节点的首位
+        //  $('sapn').prependTo($('div'));
+
+        //  div前面是span
+        //  $('span').insertBefore($('div')).css('backgroundColor','red');
+        //  span前面是div
+         $('span').before($('div')).css('backgroundColor','red');
+        //  $('div').insertBefore($('span')).css('backgroundColor','red');
+
+       })
+  </script>
+</head>
+<body>
+  <div id="div1"><em>em</em>div文本</div>
+  <span>审判</span>
+  
+</body>
+</html>

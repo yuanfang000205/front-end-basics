@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul li {
+      list-style: none;
+     padding: 10px;
+      margin-top: 10px;
+    }
+    ul li:nth-child(-n+3) span{
+      background-color: red;
+      color: #fff;
+      padding: 10px;
+    
+    }
+    ul li:nth-last-child(-n+2) span{
+      background-color: gray;
+      color: #fff;
+      padding: 10px;
+    }
+    a {
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><span>1</span><a href="#">华为</a></li>
+    <li><span>2</span><a href="#">苹果</a></li>
+    <li><span>3</span><a href="#">联想</a></li>
+    <li><span>4</span><a href="#">小米</a></li>
+    <li><span>5</span><a href="#">锤子</a></li>
+  </ul>
+  
+</body>
+</html>

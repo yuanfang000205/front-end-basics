@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+      //普通写法
+      window.onload = function() {
+        //  $("li:eq(2)").css("backgroundColor","red");
+        //  $("li").eq(2).css("backgroundColor","red");
+        //  $("li.a").css("backgroundColor","red");
+         $("li").filter(".a").css("backgroundColor","red");
+
+
+      }
+
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li class="a">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li class="a">4</li>
+      <li>5</li>
+    </ul>
+    <span title="name"></span>
+    <div title="name"></div>
+    <p>p</p>
+    
+  </body>
+</html>

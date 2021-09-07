@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #f00;
+      line-height: 150px;
+    }
+    .box:active {
+      /* 
+      值1：使用的关键字zhen
+      
+      
+      */
+      animation: test1 5s linear,test2 5s linear;
+    }
+
+    @keyframes test1 {
+      0% {
+        transform: translate(0,0);
+      }
+      20% {
+        transform: translate(800px,0);
+      }
+      40% {
+        transform: translate(0,500px);
+      }
+      60% {
+        transform: translate(800px,500px);
+      }
+      80% {
+        transform: translate(0,0);
+
+      }
+    }
+    @keyframes test2 {
+      0% {
+        opacity: 1;
+      }
+      20% {
+        opacity: .5;
+      }
+      40% {
+        opacity: .5;
+      }
+      80% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  
+</body>
+</html>

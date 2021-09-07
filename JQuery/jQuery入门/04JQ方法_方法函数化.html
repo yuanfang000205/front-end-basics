@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      //添加一个点击事件
+      $("h1").click(function() {
+        alert("我被点击了")
+      })
+
+      $("h1").mouseover(function() {
+        this.style.backgroundColor = 'red';
+      })
+
+      $("h1").mouseout(function() {
+        this.style.backgroundColor = 'blue';
+      })
+    })
+
+  </script>
+</head>
+<body>
+  <div>
+    <h1>hello world</h1>
+  </div>
+  
+</body>
+</html>

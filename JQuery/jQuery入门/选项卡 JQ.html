@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1 button{width: 150px;height: 40px;background-color: gray;font-size: 20px;color: white;}
+    #div1 div{
+      width: 470px;
+      height: 470px;
+      background-color: gray;
+      display: none;
+    }
+    #div1 .active{
+      background-color: yellow;
+      color: violet;
+    }
+    
+  </style>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      var btns = $('#div1').find('button');
+      var divs = $('#div1').find('div');
+
+      //按钮添加添加事件
+      btns.click(function(){
+        //清空button样式
+        btns.attr('class','');
+        //清除div样式
+        divs.css('display','none');
+
+        $(this).attr('class','active');
+        divs.eq($(this).index()).css('display','block')
+      })
+    })
+  </script>
+</head>
+<body>
+  <div id="div1">
+    <button class="active">英雄联盟</button>
+    <button>穿越火线</button>
+    <button>地下城与勇士</button>
+    <div style="display: block;">英雄联盟官方网站，海量风格各异的英雄，丰富、便捷的物品合成系统，游戏内置的匹配、排行和竞技系统，独创的“召唤师”系统及技能、符文、天赋等系统组合，必将带你进入一个崭新而又丰富多彩</div>
+    <div>腾讯游戏《穿越火线》下载官方网站。300万人同时在线，三亿鼠标的枪战梦想。《穿越火线》追求的不仅仅是开枪的爽快感，而是来自相互合作及默契带来的战略意义。最新活动尽在CF官方网站。</div>
+    <div>《地下城与勇士》DNF官方网站。《地下城与勇士》是全球2D横版格斗网络游戏（MMOACT）的先行者。无限连击的动作特性、极富多样化的职业分支、精准的操作与多样化副本体验，让玩家全方位体验打击爽快感。</div>
+  </div>
+  
+</body>
+</html>

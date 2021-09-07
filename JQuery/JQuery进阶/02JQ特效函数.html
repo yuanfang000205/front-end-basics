@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1{width:100px;height:100px;background-color: red;}
+    #div2{width:100px;height:100px;background-color: fuchsia;}
+  </style>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+    /* 
+     *      hide() 隐藏
+                第一个参数：动画持续的毫秒数
+                第二个参数：回调函数，动画结束时执行
+            show() 显示
+              【注】动画效果是从左上角收缩和左上角展开
+
+
+            slideDown()
+            slideUp()  动画为卷闸效果
+
+            fadeIn()  淡入
+            fadeOut() 淡出
+            fadeTo(动画持续毫秒数，透明度0-1，回调函数) 
+     */
+    $(function(){
+      $('#div1').hover(function(){
+          // $('#div2').hide(2000,function(){
+          //   $('#div1').html('移入')
+          // })
+          // $('#div2').slideUp(2000,function(){
+          //   $('#div1').html('移入')
+          // })
+          $('#div2').fadeOut(2000,function(){
+            $('#div1').html('移入')
+          })
+      },function(){
+          // $('#div2').show(2000,function(){
+          //   $('#div1').html('移出')
+          // })
+          // $('#div2').slideDown(2000,function(){
+          //   $('#div1').html('移出')
+          // })
+          $('#div2').fadeIn(2000,function(){
+            $('#div1').html('移入')
+          })
+      })
+    })
+  </script>
+</head>
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+  
+</body>
+</html>

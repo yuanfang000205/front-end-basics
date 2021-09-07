@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    #cl{
+      width: 300px;
+      height: 300px;
+      background-color: #f0f;
+      text-align: center;
+      line-height: 300px;
+    }
+  </style>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      //1.给一个事件添加一个函数
+      // $('div').on('click',function(){
+      //   alert('hello');
+      // })
+      //2.同时给多个事件添加函数,多个事件之间使用空格隔开
+      // var i = 0;
+      // $('div').on('click mouseover mouseout',function(){
+      //   $(this).html(i++);
+      // })
+      //3.给不同的事件添加不同的函数
+      $('#cl').on({
+        click: function(){
+          alert('hello')
+        },
+        mouseover: function(){
+          $(this).css('backgroundColor','red');
+        },
+        mouseout: function(){
+          $(this).css('backgroundColor','blue');
+        }
+      })
+      //4.事件委托
+      /*
+        第二个参数，是触发对象的选择器
+      */
+      $('ul').on('click','li',function(){
+        $(this).css('backgroundColor','red');
+      })
+
+      var i = 6;
+      $('.b1').click(function(){
+        $(`<li>${i++}</li>`).appendTo($('ul'));
+      })
+    
+      $('.b2').click(function(){
+        $(".b1").off();//取消所有事件上的所有函数
+      })
+    })
+  </script>
+</head>
+<body>
+  <div class="div1">
+  <div id="cl">
+   div文本
+  </div>
+    <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <button class="b1">添加ul子节点</button>
+  <button class="b2">取消事件</button>
+  </div>
+  
+  
+</body>
+</html>

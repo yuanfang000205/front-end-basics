@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 方式一:将函数()再()调用
+    (function test1() {
+      console.log("test1被执行")
+    })()
+
+    // 方式二:将函数和()用()包裹起来
+    (function() {
+      console.log("test2被执行")
+    }())
+
+    
+  </script>
+</body>
+</html>

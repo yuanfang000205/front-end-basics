@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function(){
+        // alert($('input').val())  JQ取值只能获取第一个符合元素的值
+        // $('input').val('hello')  JQ赋值为批量操作,会对所有获取到的元素进行赋值
+        /* 
+        【注】 css() attr() html() 都是批量操作
+          size()低版本适用
+        */
+        // alert($('input').size());
+        // alert($('input').length);
+
+        $('input').each(function(index,item){
+          alert(index+','+item);
+          $(item).val(index)
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <input type="text" value="aaa">
+    <input type="text" value="bbb">
+    <input type="text" value="ccc">
+    
+  </body>
+</html>

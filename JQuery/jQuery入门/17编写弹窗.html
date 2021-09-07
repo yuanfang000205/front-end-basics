@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .div1 {
+      width: 300px;
+      height: 300px;
+      border: 1px solid greenyellow;
+      position: relative;
+      display: none;
+    }
+    .close{
+      position:absolute;
+      right: 0;
+      top: 0;
+
+      cursor: pointer;
+    }
+    button {
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+  </style>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      //获取top和left
+      var top = $(window).scrollTop() + ($(window).height() - $('.div1').outerHeight(true)) / 2;
+      var left = ($(window).width() - $('.div1').outerWidth(true)) / 2
+
+      $('.div1').css({
+        'top':top,
+        'left':left
+      });
+      $(window).on('scroll resize',function(){
+        var top = $(window).scrollTop() + ($(window).height() - $('.div1').outerHeight(true)) / 2;
+      var left = ($(window).width() - $('.div1').outerWidth(true)) / 2
+
+      $('.div1').css({
+        'top':top,
+        'left':left
+      });
+      })
+
+      $('.issue').click(function(){
+        $('.div1').css('display','block');
+      })
+      $('.close').on('click',function(){
+        $('.div1').css('display','none');
+      })
+    })
+
+  </script>
+</head>
+<body style="height: 3000px;">
+  <button class="issue">发布</button>
+  <div class="div1">
+    <input type="text" placeholder="请输入用户名">
+    <input type="text" placeholder="请输入密码">
+    <div class="close">X</div>
+  </div>
+  
+</body>
+</html>

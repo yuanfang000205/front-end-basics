@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+      //普通写法
+      window.onload = function() {
+        // $("li").css("backgroundColor","red");
+
+        //表达式写法
+        // $("li:first").css("backgroundColor","green");
+
+        //偶数位
+        // $("li:even").css("backgroundColor","green");
+
+        //奇数位
+        $("li:odd").css("backgroundColor","green");
+
+
+        
+      }
+
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    
+  </body>
+</html>

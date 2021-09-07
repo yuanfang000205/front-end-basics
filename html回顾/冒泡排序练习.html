@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var nums = [12,0,56,36,32,29,100,98,205,166];
+
+    for(var j = nums.length-1; j >= 0; j--) {
+      for(var i = 0; i< nums.length; i++){
+        if(nums[i] > nums[i+1]){
+          var temp = nums[i];
+          nums[i] = nums[i+1];
+          nums[i+1] = temp
+        }
+      }
+    }
+    console.log(nums)
+ 
+  </script>
+  
+</body>
+</html>
