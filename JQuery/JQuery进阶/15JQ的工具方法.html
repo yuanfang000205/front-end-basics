@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+
+      /*  使用方法: $.xxx()
+        * type()      输出当前数据类型
+        * trim()      去掉首尾空格
+        * inArray()   indexOf() 返回当前字符串下标
+        * makeArray() 转成数组
+
+      */
+      var str = ['a','b','c']
+
+      $(function(){
+        // alert($.type(str))
+
+
+        // alert($.inArray('a',str))
+
+        var nodes = document.getElementsByTagName('div');
+        nodes = $.makeArray(nodes);
+        nodes.push('hello');
+        alert(nodes)
+      })
+  </script>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  
+</body>
+</html>

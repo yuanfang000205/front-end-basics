@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+      /*
+        siblings: 除该标签之外的所有标签
+        添加标签后即为指定标签
+        nextAll:  该标签之后的所有标签
+        prevAll:  该标签之前的所有标签
+        nextUntil 该标签之后直到某标签的中间所有标签
+        prevUnitl 该标签之前直到某标签的中间所有标签
+        parentsUntil  整个页面
+      */
+      $(function(){
+        // $('span').siblings().css('backgroundColor','red')
+        // $('span').nextAll('p').css('backgroundColor','red')
+        // $('span').prevAll().css('backgroundColor','red')
+        // $('span').nextUntil('p').css('backgroundColor','red')
+        // $('span').prevUntil().css('backgroundColor','red')
+        $('span').parentsUntil().css('backgroundColor','red')
+      })  
+  </script>
+</head>
+<body>
+  <div>
+    <h2>h</h2>
+    <h1>h1</h1>
+    <span>span</span>
+    <a href="">aaa</a>
+    <p>p</p>
+  </div>
+  
+</body>
+</html>

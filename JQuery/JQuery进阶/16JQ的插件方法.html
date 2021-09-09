@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{height: 100px;
+    width: 100px;background-color: #f0f;position: absolute;}
+  </style>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+    /*
+      $.extend      扩展工具方法
+      $.fn.extend   扩展JQ方法
+    */
+    $.extend({
+      test: function(){
+        alert('扩展工具方法')
+      }
+    })
+    $.fn.extend({
+      test: function(){
+        alert('扩展JQ方法')
+      },
+      drag: function(){
+        $(this).mousedown(function(ev){
+          var offsetX = ev.clientX - $(this).offset().left;
+          var offsetY = ev.clientY - $(this).offset().top;
+
+          var _this = this;
+          $(document).mousemove(function(ev){
+            $(_this).css({
+              left: ev.clientX - offsetX,
+              top:  ev.clientY - offsetY
+            })
+          })
+        })
+        $(document).mouseup(function(){
+          $(document).off('mousemove')
+        })      
+      }
+    })
+
+    $(function(){
+      // $.test();
+      // $(document).test()
+      $('div').drag()
+    })
+
+
+  </script>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  
+</body>
+</html>

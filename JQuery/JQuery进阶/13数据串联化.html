@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+    /*
+      serialize 将数据拼接成querystring查询字符串  a=1&b=2&c=3
+      serializeArray  返回Array数组
+    */
+
+    $(function(){
+      // alert($('input').serialize())
+      console.log($('input').serializeArray())
+    })
+
+  </script>
+</head>
+<body>
+  <div>
+    <input type="text" name="a" value="1">
+    <input type="text" name="b" value="2">
+    <input type="text" name="c" value="3">
+  </div>
+  
+</body>
+</html>

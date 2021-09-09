@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+
+    /*
+      给指定节点添加包装
+      wrap()      给每个获取到的节点都添加包装
+      wrapAll()   整体包装，给指定标签统一在一块添加包装
+      wrapInner() 给指定标签里的内容添加包装
+      unwrap()    删除包装，删除上一个节点的包装，不包括body,不传参数
+    */
+    $(function(){
+      $('span').wrap('<h1></h1>')
+      
+    })
+
+  </script>
+</head>
+<body>
+  <div>
+    <span>span</span>
+  </div>
+  <span>span</span>
+  <span>span</span>
+  <span>span</span>
+  <span>span</span>
+  
+</body>
+</html>

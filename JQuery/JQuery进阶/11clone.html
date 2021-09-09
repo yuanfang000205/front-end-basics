@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1{width: 100px;height: 100px;background-color: #f00;}
+    #div2{width: 200px;height: 200px;border: 1px solid blue;}
+  </style>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+    /**
+     * 【注】clone 只克隆本身，不含行为
+     *      clone(true) 本身和行为都可克隆
+     */ 
+
+    $(function(){
+
+      $('#div1').hover(function(){
+        $(this).css('backgroundColor','black')
+      },function(){
+        $(this).css('backgroundColor','yellow')
+      })
+
+      $('button').click(function(){
+        var node = $('#div1').clone(true);
+        node.appendTo($('#div2'))
+      })
+
+    })
+  </script>
+</head>
+<body>
+
+  <button>克隆节点</button>
+  <div id="div1"></div>
+  <div id="div2"></div>
+  
+</body>
+</html>

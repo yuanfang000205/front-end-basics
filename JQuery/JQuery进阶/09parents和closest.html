@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+    /*
+      parent: 修改该标签的父节点属性
+      parents:修改该标签所有父节点属性
+      closest:修改指定标签的属性，从自身往上查找
+    */
+    $(function(){
+      // $('#div2').parent().css('backgroundColor','red')
+      // $('#div2').parents().css('backgroundColor','red')
+      $('#div2').closest('#div1').css('backgroundColor','red')
+    })
+
+  </script>
+</head>
+<body class="box">
+  <div id="div1" class="box">div1
+    <div id="div2" class="box">div2</div>
+  </div>
+  
+</body>
+</html>

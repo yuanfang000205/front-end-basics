@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1{width:100px;height:100px;background-color: red;}
+    #div2{width:100px;height:100px;background-color: fuchsia;}
+  </style>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+    // *animate 默认运动形式:慢快慢
+    /* 匀速："linear"
+       慢快慢: "swing"
+       拓展更多animate运动形式
+      */
+    $(function(){
+
+      $("#div1").click(function(){
+        $(this).animate({width:300},2000).animate({height:200},3000)
+      })
+      $('#div2').click(function(){
+        // $('#div1').stop();//停止当前动画，进入后续动画
+        // $('#div1').stop(true);//停止当前动画，并且不进入后续动画
+        // $('#div1').stop(true,true);//停止后续动画，当前动画立即到达目的值
+        $('#div1').finish();//所有动画直接到达目的值
+      })
+  })
+  </script>
+</head>
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+</body>
+</html>
