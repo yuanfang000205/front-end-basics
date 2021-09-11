@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="banner.css">
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      var olis = $('#play ol li');
+      var ul = $('#play ul');
+      var lis = ul.find('li');
+
+      var timer = null;
+      var iNow = 0;//记录当前下标
+
+      olis.click(function(){
+        iNow = $(this).index();
+        tab();
+      })
+      $('#play').mouseenter(function(){
+        clearInterval(timer);
+      }).mouseleave(function(){
+          timer = setInterval(function(){
+            iNow++;
+            tab();
+          }, 1500);
+      })
+
+      timer = setInterval(function(){
+        iNow++;
+        tab();
+      }, 1500);
+
+      function tab() {
+        olis.attr('class','').eq(iNow).attr('class','active');
+        if(iNow == olis.length){
+            olis.eq(0).attr('class','active')
+        }
+        ul.animate({
+          top: -150 * iNow
+        },500,function(){
+          //判断是否是最后一张图片
+          if(iNow == olis.length){
+            iNow = 0;
+            ul.css('top',0)
+          }
+
+        })
+      }
+
+      
+    })
+  </script>
+</head>
+<body>
+  <div class="play" id="play">
+    <ol>
+      <li class="active">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ol>
+    <ul>
+      <!-- 可以将第一张图片添加到最后一张图片后面
+           当最后一张图片动画结束后直接切回第一张图片 -->
+      <li><a href=""><img src="cloud.jpg" alt="第一张"></a></li>
+      <li><a href=""><img src="cloud1.jpg" alt="第二张"></a></li>
+      <li><a href=""><img src="sunset.jpg" alt="第三张"></a></li>
+      <li><a href=""><img src="sunset1.jpg" alt="第四张"></a></li>
+      <li><a href=""><img src="ooo.jpg" alt="第五张"></a></li>
+    </ul>
+  </div>
+  
+</body>
+</html>
